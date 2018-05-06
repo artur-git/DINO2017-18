@@ -1,5 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Komendy Git</title>
+</head>
 <body>
-Początek :)
+  
+  <dl>
+    <dt>
+      git config --global color.ui true
+    </dt>
+    <dd>
+      Włącza kolorowanie wyników dzałania rodzin komend git.
+    </dd>
+    <dt>
+      git commit "filename"
+    </dt>
+    <dd>
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w stagind wcześniej dodane pliki za pomocą git add.
+    </dd>
+    <dt>
+      git branch "name"
+    </dt>
+    <dd>
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą git checkout "name".
+    </dd>
+    <dt>
+      git branch -v
+    </dt>
+    <dd>
+      W trybie listy wyświetla skrót sha1 i temat commita w jednej linii dla każdej sekcji head, ze statusem względem nielokalnej gałęzi.
+    </dd>
+    <dt>
+      git push "remote" "branch"
+    </dt>
+    <dd>
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch"
+    </dd>
+    <dt>
+      git log "branch" --not "branch"
+    </dt>
+    <dd>
+      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument.
+    </dd>
+    <dt>
+      git blame -C "filename"
+    </dt>
+    <dd>
+      Rozpoznaje linie w pliku "filename" skopiowane z innych, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
+    </dd>
+    <dt>
+      git bisect (start, bad, good, reset)
+    </dt>
+    <dd>
+      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem git bisect bad, a jeżeli nie wystepuje to oznaczamy jako git bisect good i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita ktory wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji czyli powrót do oryginalnego head.  
+    </dd>
+  </dl>
+
 </body>
 </html>
