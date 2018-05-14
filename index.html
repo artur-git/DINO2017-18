@@ -1,5 +1,17 @@
 <html>
+ <head>
+  <meta charset="UTF-8">
+</head> 
 <body>
 Początek :)
+  <p><b>git config --global user.name "John Doe"</b></br>
+    Komenda służąca do ustawienia swojej nazwy użytkownika.</br>
+    Ogólnie polecenie <b>git config</b> służy do ustawiania niestandardowych konfiguracji systemu.</br>
+    Git korzysta z zestawu plików konfiguracyjnych, które służą do zdefiniowania ustawień dla określonych poziomów systemu.</br>
+    Użycie opcji <b>git config --system</b> powoduje czytanie lub edytowanie konfiguracji z pliku /etc/gitconfig, która stosuje się do każdego użytkownika i repozytorium w systemie.</br>
+    Opcja <b>git config --global</b> służy do czytania lub edytowania konfiguracji z pliku ~/.gitconfig lub ~/.config/git/config, który zawiera konfigurację specyficzną dla danego użytkownika.</br>
+    Opcja <b>git config --local</b> czyta lub edytuje konfigurację z pliku .git/config, należącego do aktualnego repozytorium, określającego ustawienia specyficzne tylko dla niego. Jest to domyślny poziom konfiguracji, w przypadku braku określenia odpowiedniej opcji w poleceniu <b>git config</b>.</br>
+    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe. 
+  </p>
 </body>
 </html>
