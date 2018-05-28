@@ -3,6 +3,33 @@
   <meta charset="UTF-8">
 </head> 
 <body>
+
+  
+Grupa CE
+
+- git config --global user.email ""
+  Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
+    
+- git commit -a -m ""
+  Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
+  Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
+  
+- git diff --staged
+  
+- git checkout -b "branch"
+  W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
+  
+  
+- git log --graph --all
+  Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
+  
+- git branch -d "branch"
+
+- git remote add "remote_name" "git url"
+
+- git fetch "remote" "branch"
+  
+
 Początek :)
   <p><b>git config --global user.name "John Doe"</b></br>
     Komenda służąca do ustawienia swojej nazwy użytkownika.</br>
@@ -31,6 +58,7 @@ Początek :)
     <b>git reset</b> to przeciwieństwo <b>git add</b>. Komenda służąca do cofania zmian w lokalnym repozytorium. <br />
     HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
   </p>
+
 
 </body>
 </html>
