@@ -1,9 +1,28 @@
 <html>
  <head>
   <meta charset="UTF-8">
-</head> 
-<body>
+  <style>
+    .main_content {
+      white-space: pre-line;
+    }
 
+    .command {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .command__title {
+      margin: 10px 0;
+    }
+
+    .command__description {
+      margin: 5px 0;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <main class="main_content">
   
 Grupa CE
 
@@ -59,6 +78,44 @@ Początek :)
     HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
   </p>
 git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
-
+  <section class="command">
+    <h2 class="command__title">git config --global user.email ""</h2>
+    <p class="command__description">
+      Ustawia globalnie email użytkownika.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git diff --staged</h2>
+    <p class="command__description">
+      Pokazuje co zostało zmienione w obserwowanych plikach.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git checkout -b "branch"</h2>
+    <p class="command__description">
+      Przechodzi na gałąź o nazwie branch, jeśli taka nie istnieje to tworzy nową.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git log --graph --all</h2>
+    <p class="command__description">
+      Wypisuje listę poprzednich commitów.
+      Opcja graph dodaje graficzny podgląd gałęzi.
+      Opcja all pokazuje też inne gałęzie.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git branch -d "branch"</h2>
+    <p class="command__description">
+      Usuwa gałąź o nazwie branch.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git fetch "remote" "branch"</h2>
+    <p class="command__description">
+      Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
+    </p>
+  </section>
+</main>
 </body>
 </html>
