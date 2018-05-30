@@ -22,9 +22,7 @@ Zadanie zaliczą te osoby, które łącznie:
  
   * Grupa CC
     * git config --global user.name ""
-    * git add .
     * git reset HEAD
-    * git checkout "branch"
     * gitk -all
     * git branch --merged
     * git branch "branch" "commit hash"
@@ -32,20 +30,24 @@ Zadanie zaliczą te osoby, które łącznie:
     
   * Grupa CE
     * git config --global user.email ""
-    * git commit -a -m ""
     * git diff --staged
     * git checkout -b "branch"
     * git log --graph --all
     * git branch -d "branch"
-    * git remote add "remote_name" "git url"
     * git fetch "remote" "branch"
   
   * Grupa CF
     * git config --global color.ui true
     * git commit "filename"
-    * git branch "name"
     * git branch -v
     * git push "remote" "branch"
     * git log "branch" --not "branch"
-    * git blame -C "filename"
     * git bisect (start, bad, good, reset)
+  
+  * Grupa CG
+    * git commit -a -m ""
+    * git add .
+    * git checkout "branch"
+    * git remote add "remote_name" "git url"
+    * git blame -C "filename"
+    * git branch "name"
