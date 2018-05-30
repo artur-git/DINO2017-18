@@ -1,64 +1,62 @@
-<html>
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-</head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Komendy Git</title>
+</head>
 <body>
-
   
-Grupa CE
-
-- git config --global user.email ""
-  Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
-    
-- git commit -a -m ""
-  Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
-  Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
-  
-- git diff --staged
-  
-- git checkout -b "branch"
-  W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
-  
-  
-- git log --graph --all
-  Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
-  
-- git branch -d "branch"
-
-- git remote add "remote_name" "git url"
-
-- git fetch "remote" "branch"
-  
-
-Początek :)
-  <p><b>git config --global user.name "John Doe"</b></br>
-    Komenda służąca do ustawienia swojej nazwy użytkownika.</br>
-    Ogólnie polecenie <b>git config</b> służy do ustawiania niestandardowych konfiguracji systemu.</br>
-    Git korzysta z zestawu plików konfiguracyjnych, które służą do zdefiniowania ustawień dla określonych poziomów systemu.</br>
-    Użycie opcji <b>git config --system</b> powoduje czytanie lub edytowanie konfiguracji z pliku /etc/gitconfig, która stosuje się do każdego użytkownika i repozytorium w systemie.</br>
-    Opcja <b>git config --global</b> służy do czytania lub edytowania konfiguracji z pliku ~/.gitconfig lub ~/.config/git/config, który zawiera konfigurację specyficzną dla danego użytkownika.</br>
-    Opcja <b>git config --local</b> czyta lub edytuje konfigurację z pliku .git/config, należącego do aktualnego repozytorium, określającego ustawienia specyficzne tylko dla niego. Jest to domyślny poziom konfiguracji, w przypadku braku określenia odpowiedniej opcji w poleceniu <b>git config</b>.</br>
-    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe. 
-  </p>
-
-  <p><b>git commit -a -m ""</b></br>
-
-  Records changes to the repository. </br>
-
-  -a - also stages files (modified and deleted, but not new) (works almost like git add -u)
-
-  -m "" - with commit message inside "" 
-  </p>
-  git add . - dodaje wszystkie pliki do śledzenia
-  git checkout "branch" - przełączanie do nowej gałęzi
-  <br>
-<b>git branch "name"</b> - tworzy nową gałąź o podanej nazwie
-
-  <p><b>git reset HEAD</b> <br />
-    <b>git reset</b> to przeciwieństwo <b>git add</b>. Komenda służąca do cofania zmian w lokalnym repozytorium. <br />
-    HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
-  </p>
-git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
-
+  <dl>
+    <dt>
+      git config --global color.ui true
+    </dt>
+    <dd>
+      Włącza kolorowanie wyników dzałania rodzin komend git.
+    </dd>
+    <dt>
+      git commit "filename"
+    </dt>
+    <dd>
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
+    </dd>
+    <dt>
+      git branch "name"
+    </dt>
+    <dd>
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
+    </dd>
+    <dt>
+      git branch -v
+    </dt>
+    <dd>
+      W trybie listy wyświetla skrót sha1 i temat commita w jednej linii dla każdej sekcji head, ze statusem względem nielokalnej gałęzi.
+    </dd>
+    <dt>
+      git push "remote" "branch"
+    </dt>
+    <dd>
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch"
+    </dd>
+    <dt>
+      git log "branch" --not "branch"
+    </dt>
+    <dd>
+      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument.
+    </dd>
+    <dt>
+      git blame -C "filename"
+    </dt>
+    <dd>
+      Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
+    </dd>
+    <dt>
+      git bisect (start, bad, good, reset)
+    </dt>
+    <dd>
+      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
+    </dd>
+  </dl>
 </body>
 </html>
