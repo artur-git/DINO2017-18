@@ -173,6 +173,13 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <dd>
       Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
     </dd>
+	<dt>
+      gitk -all
+    </dt>
+    <dd>
+      gitk - The Git repository browse.
+      gitk -all - Show all refs (branches, tags, etc.).
+    </dd>
   </dl>
 </body>
 </html>
